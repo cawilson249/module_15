@@ -91,9 +91,9 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geo
             if (depth>90)
             return "red";
         else if (depth>70)
-        return "afc4903";
+        return "#afc4903";
         else if (depth>50)
-        return "afc4803";
+        return "#afc4803";
         else if (depth > 30)
         return  "#fcad03";
         else if (depth > 10)
@@ -171,7 +171,7 @@ legend.onAdd = function() {
     let intervals = [-10, 10, 30, 50, 70, 90];
     // set colors for the intervals
     let colors = [
-        "green", "#cafc03","#fcad03", "afc4803", "afc4903", "red"
+        "green", "#cafc03","#fcad03", "#ee9c00", "cornsilk", "red"
     ];
     // loop through colors and intervals with a colored square
     for(var i = 0; i < intervals.length; i++)
@@ -181,7 +181,7 @@ legend.onAdd = function() {
         + colors[i]
         + "'></i> "
         + intervals[i]
-        + (intervals[i +1 ] ? "km &ndash km;" + intervals[i + 1] + "km<br>" : "+");
+        + (intervals[i +1 ] ? "km &ndash; km" + intervals[i + 1] + "km<br>" : "+");
     }
 
     return div;
